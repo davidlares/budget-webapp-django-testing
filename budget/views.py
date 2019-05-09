@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Project, Category, Expense
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import CreateView
 from django.utils.text import slugify
 from .forms import ExpenseForm
+import json
 
 # Create your views here.
 def project_list(request):
@@ -33,6 +34,11 @@ def project_detail(request, project_slug): # param
                 amount=amount,
                 category=category
             ).save()
+
+    elif request.method == "DELETE":
+        id = json.loads(request.body)['id']
+        expense = get_object_or_404(Expense, id=id)
+        expense.delete()
 
     return HttpResponseRedirect(project_slug)
 

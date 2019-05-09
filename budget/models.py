@@ -12,6 +12,20 @@ class Project(models.Model):
         self.slug = slugify(self.name)
         super(Project, self).save(*args, **kwargs) # calling the parent
 
+    # getting total Transactions
+    def total_transactions(self):
+        expense_list = Expense.objects.filter(project=self)
+        return len(expense_list)
+
+    # budget left
+    def budget_left(self):
+        expense_list = Expense.objects.filter(project=self)
+        total_expense_amount = 0
+        for expense in expense_list:
+            total_expense_amount += expense.amount
+
+        return self.budget - total_expense_amount
+
 class Category(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
