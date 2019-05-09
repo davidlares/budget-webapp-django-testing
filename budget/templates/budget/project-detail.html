@@ -11,23 +11,23 @@
         </div>
         <div class="col l4 s12 m12">
           <div class="card-panel">
-            <h6 class="bold">Budget Left</h6>
-            {% if project.budget_left > 0 %}
-              <h2 class="bold green-text">$ {{project.budget_left}}</h2>
-            {% elif project.budget_left == 0  %}
-              <h2 class="bold orange-text">$ {{project.budget_left}}</h2>
-            {% else %}
-              <h2 class="bold red-text">$ {{project.budget_left}}</h2>
-            {% endif %}
+              <h6 class="bold">Budget Left</h6>
+              {% if project.budget_left > 0 %}
+              <h1 class="bold green-text">${{project.budget_left}}</h1>
+              {% elif project.budget_left == 0  %}
+              <h1 class="bold orange-text">${{project.budget_left}}</h1>
+              {% else %}
+              <h1 class="bold red-text">${{project.budget_left}}</h1>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col l4 s12 m12">
+            <div class="card-panel">
+              <h6 class="bold">Total Transactions</h6>
+              <h1 class="bold">{{project.total_transactions}}</h1>
+            </div>
           </div>
         </div>
-        <div class="col l4 s12 m12">
-          <div class="card-panel">
-            <h6 class="bold">Total Transactions</h6>
-            <h1 class="bold">{{project.total_transactions}}</h1>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="section section-expenses">

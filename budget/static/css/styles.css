@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 html {
-  font-family: "Montserrat";
-  background-color: #e0e0e0;
+  font-family: 'Montserrat';
+  background-color: #E0E0E0;
+}
+
+h1, h6 {
+  font-weight: bold;
 }
 
 .bold {
@@ -11,6 +15,10 @@ html {
 
 .row {
   margin: 0 !important;
+}
+
+.row .col {
+  padding-left: 0!important;
 }
 
 .noproject-wrapper {
@@ -67,6 +75,6 @@ form ul li.category {
   font-size: 13px;
 }
 
-.section-expense li:nth-child(even) .expense {
+.section-expenses li:nth-child(even) .expense {
   background-color: #f2f2f2;
 }

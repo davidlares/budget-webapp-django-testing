@@ -24,6 +24,9 @@ class Project(models.Model):
         for expense in expense_list:
             total_expense_amount += expense.amount
 
+        # converting the total in integer
+        total_expense_amount = int(total_expense_amount)
+
         return self.budget - total_expense_amount
 
 class Category(models.Model):
@@ -38,4 +41,4 @@ class Expense(models.Model):
 
     class Meta:
         # desc way
-        ordering = ['-amount']
+        ordering = ['-amount',]
