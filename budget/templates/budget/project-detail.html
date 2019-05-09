@@ -26,7 +26,10 @@
 
     <section class="section section-expenses">
       <div class="row">
-        <button type="button" name="button" class="btn waves-effect right"> <i class="material-icons white-text left">add_circle</i> Add Expense</button>
+        <button type="button" class="btn waves-effect right modal-trigger" href="#expenseModal">
+          <i class="material-icons white-text left">add_circle</i>
+            Add Expense
+        </button>
       </div>
       <ul class="z-depth-1">
         {% for expense in expense_list %}
@@ -53,4 +56,39 @@
     </section>
 
   </div>
+
+  <div id="expenseModal" class="modal">
+    <div class="modal-content">
+      <h4>Add Expense</h4>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+
+        <label for="amount">Amount</label>
+        <input type="text" name="amount" id="amount">
+
+        <select class="" name="category">
+          {% for category in category_list %}
+            <option>{{category.name}}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit" class="btn">Add</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+    var elem = document.querySelector('.modal')
+    var instance = M.Modal.init(elem)
+
+    var elem = document.querySelector('select')
+    var instance = M.FormSelect.init(elem)
+
+  </script>
+
 {% endblock %}
