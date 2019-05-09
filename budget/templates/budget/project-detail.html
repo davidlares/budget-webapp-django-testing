@@ -24,7 +24,7 @@
         <div class="col l4 s12 m12">
           <div class="card-panel">
             <h6 class="bold">Total Transactions</h6>
-            <h1 class="bold">$ {{project.total_transactions}}</h1>
+            <h1 class="bold">{{project.total_transactions}}</h1>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
                 <div class="col 1">
                   <span class="title bold">{{expense.category.name}}</span>
                 </div>
-                <a onclick="deleteExpense(this)" data-id="{{ expense.id }}">
+                <a class="close-icon" onclick="deleteExpense(this)" data-id="{{ expense.id }}">
                   <i class="material-icons red-text right">close</i>
                 </a>
               </div>

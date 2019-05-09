@@ -59,6 +59,10 @@ form ul li.category {
   margin: 0;
 }
 
+.sector-expenses .close-icon:hover {
+  cursor:pointer
+}
+
 .section-expenses .expense .category {
   font-size: 13px;
 }
