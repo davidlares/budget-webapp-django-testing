@@ -1,10 +1,10 @@
-# davidBudget
+# davidBudgetTesting
 
-This repo is a simple budget Webapp for handling projects expenses built with Django 2.x and Vanilla JS.
+This is a continuation of [davidBudget](https://github.com/davidlares/davidBudget) repo.
 
-The whole Django project consists in  CRUDing projects, categories (for the projects) and registering project expenses, just like a personal Wallet. Internally handles pure Django standards and 1:M ORM DB relations.
+In this opportunity we built the testing module for this Webapp, unit testing and integration testing with the Unittest package (I think it comes default with Django 2.1.x).
 
-The frontend is vanilla JS and MaterializeCSS (not a big deal).
+And Functional testing with the `ChromeDriver` software and `Selenium` for **Automated Web Browser Actions**
 
 ## Virtualenv
 
@@ -13,6 +13,7 @@ This is a key concept for running the project on a local environment, feel free 
 Just a quick helper here:
 
 `pip install virtualenv`
+
 `virtualenv [name of your project]`
 
 You also can refer to the `requirements.txt` to check the framework version used and other dependencies required.
