@@ -2,21 +2,61 @@
 
 This is a continuation of [davidBudget](https://github.com/davidlares/davidBudget) repo.
 
-In this opportunity we built the testing module for this Webapp, unit testing and integration testing with the Unittest package (I think it comes default with Django 2.1.x).
+In this opportunity we built the testing module for this Webapp. Unit and Integration testing with the  **Unittest** module (I think it already comes with Django 2.1.x).
 
 And Functional testing with the `ChromeDriver` software and `Selenium` for **Automated Web Browser Actions**
 
+#### ChromeDriver
+
+"WebDriver is an open source tool for automated testing of webapps across many browsers". Is a B-side software that displays a web browser built by Chromium
+
+Download: [ChromeDriver](http://chromedriver.chromium.org/)
+
+#### Selenium
+
+Works along with ChromeDriver (the previous software runs an server browser) or something like that, and the Selenium automates tasks for testing purposes. Please refer to the `funtional_tests/test_project_list_page.py` file.
+
+## Automated testing
+
+Is a piece of code which makes sure that another piece of code is working correctly under a certain condition
+Code like normally do - validates is the functionality is correctly
+
+#### Unit Test
+
+  This particular test runs (test cycle) one piece independently of other pieces
+
+
+    `def add_number(first, second):
+        return first + second
+
+     def test_add_numbers():
+        assert add_numbers(1,2) == 3
+
+      If True = doesn't complain
+    `
+
+#### Integration Test
+
+  Tests for multiple pieces together to assure that they work well with one another
+
+#### Functional Test
+
+  Usually are the tests that works from the end-user's POV
+
+#### Running Tests
+
+  `./manage.py test [application]`
+  `./manage.py test fuctional_tests` This directory should be a Python module
+
 ## Virtualenv
 
-This is a key concept for running the project on a local environment, feel free to use it as you wish, but I strongly recommend it to isolate working environments and it's dependencies
+  Make sure that for Django 2.x we need to use Py3 based **Virtualenv**, so, commonly virtualenv is installed and implemented using the Py2 version. To force it, we need to specify the python version with the `-p` flag:
 
-Just a quick helper here:
+  `virtualenv -p python3 [name]`
 
-`pip install virtualenv`
+## Installing dependencies
 
-`virtualenv [name of your project]`
-
-You also can refer to the `requirements.txt` to check the framework version used and other dependencies required.
+ Just run the `pip install -r requirements.txt`
 
 ## Security Update
 
