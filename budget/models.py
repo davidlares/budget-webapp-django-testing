@@ -13,11 +13,13 @@ class Project(models.Model):
         super(Project, self).save(*args, **kwargs) # calling the parent
 
     # getting total Transactions
+    @property
     def total_transactions(self):
         expense_list = Expense.objects.filter(project=self)
-        return len(expense_list)
-
+        # return len(expense_list)
+        return expense_list.count()
     # budget left
+    @property
     def budget_left(self):
         expense_list = Expense.objects.filter(project=self)
         total_expense_amount = 0
@@ -28,6 +30,9 @@ class Project(models.Model):
         total_expense_amount = int(total_expense_amount)
 
         return self.budget - total_expense_amount
+
+    def get_absolute_url(self):
+        return '/' + self.slug
 
 class Category(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)

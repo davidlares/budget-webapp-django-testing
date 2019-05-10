@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Category, Expense
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import CreateView
@@ -41,7 +41,9 @@ def project_detail(request, project_slug): # param
         expense = get_object_or_404(Expense, id=id)
         expense.delete()
 
-    return HttpResponseRedirect(project_slug)
+        return HttpResponse(status=204)
+
+    return redirect(project)
 
 class ProjectCreateView(CreateView):
     model = Project

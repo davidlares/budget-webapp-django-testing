@@ -13,7 +13,7 @@ class TestViews(TestCase):
         # creating a object for getting the slug correctly (override  save method)
         self.desktopapp = Project.objects.create(
             name = "Desktop app",
-            budget = 1000
+            budget = 10000
         )
 
     # GET methods
@@ -61,7 +61,7 @@ class TestViews(TestCase):
 
     def test_project_detail_delete_expense(self):
 
-        category = Category.objects.create (
+        category1 = Category.objects.create (
             project = self.desktopapp,
             name = 'development'
         )
@@ -70,7 +70,7 @@ class TestViews(TestCase):
             project = self.desktopapp,
             title = 'expense1',
             amount = 1000,
-            category = category
+            category = category1
         )
 
         response = self.client.delete(self.detail_url, json.dumps({
