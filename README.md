@@ -66,7 +66,7 @@ So, this repo was updated to 2.1.7, which is a bug-free version of it.
 You can find more information here: [CVE-2019-6975](https://nvd.nist.gov/vuln/detail/CVE-2019-6975)
 
 ## Credits
-[David Lares S](https;//davidlares.com)
+[David Lares S](https://davidlares.com)
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
